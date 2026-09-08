@@ -40,25 +40,137 @@ export const capabilities = [
 export const services = [
   {
     id: "01",
-    slug: "video-production",
-    title: "VIDEO PRODUCTION",
-    shortDesc: "Cinematic 4K event films, high-energy aftermovies, highlight reels, and post-production editing.",
+    slug: "event-production",
+    title: "EVENT PRODUCTION",
+    shortDesc: "End-to-end event planning, technical coordination, stage architecture, and complete live execution.",
+    fullDesc: "We take full command of your event's technical framework. From spatial design and power distribution to show calling and timeline orchestration, our team ensures seamless production from empty hall to packed audience.",
+    icon: "Layers",
+    features: [
+      "Technical Site Inspections & Spatial Planning",
+      "Show Direction & Event Timeline Coordination",
+      "Power Distribution & Backup Generator Management",
+      "On-Site Crew Management & Stage Hands",
+      "Safety Rigging & Structural Audits"
+    ],
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "02",
+    slug: "led-walls-visuals",
+    title: "LED WALLS & VISUALS",
+    shortDesc: "High-refresh P2.5 & P3.9 indoor/outdoor LED display systems, mapping, and media playback control.",
+    fullDesc: "Deliver hyper-sharp, high-contrast visual storytelling with our ultra-bright LED displays. Ideal for daylight outdoor concerts, high-stakes corporate keynotes, and immersive stage backdrops with custom resolution switching.",
+    icon: "Tv",
+    features: [
+      "Ultra-fine P2.5 Indoor & P3.9 Outdoor LED Panels",
+      "Curved, Hanging & Ground-supported LED Structures",
+      "Novastar 4K Processors & Media Servers (Resolume / Watchout)",
+      "Live Video Feed Integration & Visual Effects",
+      "High Brightness Daylight Visibility (up to 5500 nits)"
+    ],
+    image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "03",
+    slug: "professional-sound",
+    title: "PROFESSIONAL SOUND",
+    shortDesc: "Concert-grade line array audio systems, digital mixing consoles, and crystal-clear wireless microphone rigs.",
+    fullDesc: "Sound makes or breaks an event. We engineer pristine acoustic experiences using active line arrays, digital snake networks, wireless RF management, and precision tuning for venues ranging from intimate auditoriums to open-air stadiums.",
+    icon: "Volume2",
+    features: [
+      "Active Line Array Sound Systems (d&b / JBL / L-Acoustics spec)",
+      "32-64 Channel Digital Mixing Consoles (Midas / Allen & Heath)",
+      "Shure & Sennheiser Digital Wireless RF Microphones",
+      "In-Ear Monitoring (IEM) Systems for Live Performers",
+      "Acoustic Calibration & Feedback Suppression"
+    ],
+    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "04",
+    slug: "event-lighting",
+    title: "EVENT LIGHTING",
+    shortDesc: "Intelligent moving heads, architectural beam washes, laser effects, and DMX console light show design.",
+    fullDesc: "Transform venue atmosphere into a dynamic spectacle. Our lighting directors create custom visual choreography synced to music beats, speaker intros, and theatrical cues using advanced DMX programming.",
+    icon: "Zap",
+    features: [
+      "Intelligent Moving Head Beams, Spots & Washes",
+      "Architectural Uplighting & FX Lasers",
+      "MA Lighting GrandMA DMX Control Desks",
+      "Haze, Low Fog & Cold Spark Effects",
+      "Custom Gobo Projection & Brand Lighting"
+    ],
+    image: "https://images.unsplash.com/photo-1508997449629-303059a039c0?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "05",
+    slug: "stage-infrastructure",
+    title: "STAGE & INFRASTRUCTURE",
+    shortDesc: "Heavy-duty aluminum trussing, modular staging platforms, VIP risers, and crowd safety barriers.",
+    fullDesc: "Engineered safety meets high aesthetic design. We erect rock-solid modular stage decks, ground-support roof trusses, FOH control towers, and perimeter barricades built for heavy gear loads and high-capacity crowds.",
+    icon: "Box",
+    features: [
+      "Modular Aluminium Staging Decks with Adjustable Heights",
+      "Box Trussing Structures & Ground Support Towers",
+      "FOH Control Risers & VIP Viewing Platforms",
+      "Mojo Heavy-duty Crowd Control Barricades",
+      "Weather-resistant Roof Canopies"
+    ],
+    image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "06",
+    slug: "photography",
+    title: "PHOTOGRAPHY",
+    shortDesc: "High-speed event photojournalism, red carpet portraiture, and immediate live press photo delivery.",
+    fullDesc: "Capture key moments with artistic depth and technical accuracy. Our photography team handles low-light concert action, corporate executive speeches, and high-energy crowd reactions with instant wireless edit delivery for social media teams.",
+    icon: "Camera",
+    features: [
+      "Full-Frame Sony Alpha & Canon Cinema Photo Systems",
+      "Real-time Live Photo Tethering & Cloud Uploads",
+      "Red Carpet Media Wall & VIP Step-and-Repeat",
+      "High-Resolution Color Graded Retouching",
+      "Comprehensive Digital Event Photo Archive"
+    ],
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "07",
+    slug: "videography",
+    title: "VIDEOGRAPHY",
+    shortDesc: "Cinematic 4K event films, high-energy aftermovies, highlight reels, and promo videos.",
     fullDesc: "Turn live events into captivating cinema. We deploy gimbal operators, prime lens portrait specialists, and handheld shoulder rigs to shoot 4K 60/120fps footage turned around quickly for post-event marketing.",
     icon: "Video",
     features: [
-      "4K 10-Bit Cinematic Camera Systems",
+      "4K 10-Bit Cinematic Camera Systems (Sony FX6 / FX3)",
       "High-Speed 120fps Slow-Motion Action Capture",
-      "Professional Multitrack Sound Recording",
-      "Same-Day Social Media Cutdowns & Reels",
-      "Full 4K Master Aftermovies & Color Grading"
+      "Professional Sound Recorders for Crisp Ambient & Board Audio",
+      "Same-Day Reels & Quick Social Media Cutdowns",
+      "Full 4K Master Aftermovie Production with Sound Design"
     ],
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    id: "02",
+    id: "08",
+    slug: "drone-coverage",
+    title: "DRONE COVERAGE",
+    shortDesc: "CAA Sri Lanka certified aerial drone photography & 4K cinematic video over festivals and venues.",
+    fullDesc: "Provide dramatic scale to your event with sweeping aerial perspectives. Our licensed UAV pilots capture crowd density, outdoor stage setups, coastal venues, and nighttime lit environments safely and legally.",
+    icon: "Compass",
+    features: [
+      "DJI Mavic 3 Cine & FPV Dynamic Flying Platforms",
+      "4K 60fps ProRes & RAW Aerial Footage",
+      "Nighttime Venue & Stage Aerial Lighting Shots",
+      "CAASL Safety Permits & Airspace Compliance",
+      "Live HD Video Feed Integration to LED Screens"
+    ],
+    image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "09",
     slug: "live-streaming",
     title: "LIVE STREAMING",
-    shortDesc: "Broadcast-grade multi-platform live streaming (YouTube, FB, Web), low-latency RTMP transmission, and bonded 5G cellular connectivity.",
+    shortDesc: "Broadcast-grade multicamera live video switching, RTMP streaming, and low-latency digital distribution.",
     fullDesc: "Broadcast your event globally in crystal clear 1080p/4K. Utilizing Blackmagic ATEM production switchers, tally systems, lower-third animated graphics, and bonded cellular internet for zero-fail stability.",
     icon: "Radio",
     features: [
@@ -69,38 +181,6 @@ export const services = [
       "Redundant Bonded 5G Mobile Internet Systems"
     ],
     image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    id: "03",
-    slug: "multi-camera-production",
-    title: "MULTI-CAMERA PRODUCTION",
-    shortDesc: "4 to 8 SDI feed multi-cam setups, Blackmagic ATEM live vision mixing, and instant multi-angle recording.",
-    fullDesc: "Execute live stage vision mixing with dynamic camera angles. High-speed SDI video networks, tally light indicators, and intercom systems for multi-cam director calls.",
-    icon: "Layers",
-    features: [
-      "4 to 8 SDI/HDMI Cinema Feeds",
-      "Blackmagic ATEM Production Switchers",
-      "Live Vision Mixing & Instant Playback",
-      "Wireless Director Intercom Systems",
-      "ISO Channel Synchronized Multi-Track Recording"
-    ],
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    id: "04",
-    slug: "event-coverage",
-    title: "EVENT COVERAGE",
-    shortDesc: "Comprehensive event coverage combining high-res photojournalism, live press tethering, highlight clips, and master digital archiving.",
-    fullDesc: "Capture key moments with artistic depth and technical accuracy. Our photography and video team handles low-light concert action, corporate executive speeches, and high-energy crowd reactions with instant wireless edit delivery for social media teams.",
-    icon: "Camera",
-    features: [
-      "Full-Frame Sony Alpha & Canon Cinema Systems",
-      "Real-time Live Photo Tethering & Cloud Uploads",
-      "Red Carpet Media Wall & VIP Step-and-Repeat",
-      "High-Resolution Color Graded Retouching",
-      "Comprehensive Digital Event Photo & Video Archive"
-    ],
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
   }
 ];
 
