@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVENT MEDIA PRODUCTION | Sri Lanka's Premier Event & Live Production Engine</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Professional event production, LED walls, sound, lighting, photography, videography and live streaming solutions in Sri Lanka. We don't just capture events. We produce them." />
+  <meta name="keywords" content="Event Production Sri Lanka, Pop Culture Festival Sri Lanka, LED Walls Colombo, Concert Sound Systems Sri Lanka, Stage Lighting Colombo, Videography Sri Lanka, Live Streaming Sri Lanka, Event Media Production" />
+  <meta name="author" content="Event Media Production (Pvt) Ltd" />
+
+  <meta property="og:title" content="EVENT MEDIA PRODUCTION | Create. Capture. Inspire." />
+  <meta property="og:description" content="Complete event production, technical solutions and professional media coverage — from concept to final frame. Colombo, Sri Lanka." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eventmediaproduction.lk/" />
+  <meta property="og:image" content="./logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EVENT MEDIA PRODUCTION | Sri Lanka" />
+  <meta name="twitter:description" content="We don't just capture events. We produce them. Complete technical production and media coverage." />
+  <meta name="twitter:image" content="./logo.png" />
+  
+  <link rel="canonical" href="https://eventmediaproduction.lk/" />
+  <link rel="icon" type="image/png" href="./logo.png" />
+
+  <!-- Fonts: Orbitron (Pop Culture Festival Theme) + Inter + Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Tailwind CSS CDN with config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#07070A',
+              dark: '#0E0E14',
+              card: '#13131D',
+              red: '#E50914',
+              neonRed: '#FF1E27',
+              magenta: '#FF0055',
+              cyan: '#00F0FF',
+              grey: '#94A3B8'
+            }
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            tech: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    :root {
+      --color-bg-dark: #07070a;
+      --color-bg-card: #13131d;
+      --color-red-primary: #e50914;
+      --color-red-neon: #ff1e27;
+      --color-cyan-neon: #00f0ff;
+    }
+
+    body {
+      background-color: var(--color-bg-dark);
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    .font-mono-tech {
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    /* Custom Futuristic Neon Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #07070a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1e1b2e;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e50914;
+      box-shadow: 0 0 15px #e50914;
+    }
+
+    /* Cyberpunk Grid Background Overlay */
+    .bg-tech-grid {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 30, 39, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 30, 39, 0.05) 1px, transparent 1px);
+    }
+
+    /* Neon Glow Effects */
+    .text-glow-red {
+      text-shadow: 0 0 25px rgba(229, 9, 20, 0.85), 0 0 40px rgba(255, 30, 39, 0.5);
+    }
+
+    /* Ticker Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+
+    /* REC Pulsing Dot */
+    @keyframes recBlink {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px #ff1e27); }
+      50% { opacity: 0.2; }
+    }
+
+    .animate-rec {
+      animation: recBlink 1.2s infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .animate-marquee {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- React 18 & Babel Standalone for Direct Local File Execution -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-brand-black text-slate-100 antialiased selection:bg-brand-red selection:text-white">
+
+  <div id="root"></div>
+
+  <!-- Inlined Self-Contained React Application Script -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const companyInfo = {
+      name: "EVENT MEDIA PRODUCTION (PVT) LTD",
+      shortName: "EVENT MEDIA PRODUCTION",
+      tagline: "CREATE. CAPTURE. INSPIRE.",
+      mainObjective: "We don't just capture events. We produce them.",
+      subtext: "Complete event production, technical solutions and professional media coverage — from concept to final frame.",
+      country: "Sri Lanka",
+      headquarters: "No. 45, Production Avenue, Colombo 03, Sri Lanka",
+      phone: "+94 77 123 4567",
+      whatsappPhone: "94771234567",
+      email: "eventmediap@gmail.com",
+      quotationEmail: "eventmediap@gmail.com",
+      socials: {
+        facebook: "https://www.facebook.com/share/1ETkvgru4q/?mibextid=wwXIfr",
+        instagram: "https://instagram.com/eventmediaproduction.lk",
+        tiktok: "https://tiktok.com/@eventmediaproduction.lk",
+        youtube: "https://youtube.com/@eventmediaproduction"
+      }
+    };
+
+    const capabilities = [
+      "EVENT PRODUCTION", "LED WALLS", "SOUND SYSTEMS", "STAGE LIGHTING", "STAGING & RIGGING",
+      "PHOTOGRAPHY", "CINEMATIC VIDEOGRAPHY", "LIVE STREAMING", "AERIAL DRONE VISUALS", "MULTICAM SWITCHING"
+    ];
+
+    const services = [
+      { id: "01", title: "EVENT PRODUCTION", shortDesc: "End-to-end event planning, technical coordination, stage architecture, and complete live execution.", features: ["Technical Site Inspections & Spatial Planning", "Show Direction & Event Timeline Coordination", "Power Distribution & Backup Generator Management"], image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" },
+      { id: "02", title: "LED WALLS & VISUALS", shortDesc: "High-refresh P2.5 & P3.9 indoor/outdoor LED display systems, mapping, and media playback control.", features: ["Ultra-fine P2.5 Indoor & P3.9 Outdoor LED Panels", "Curved, Hanging & Ground-supported LED Structures", "Novastar 4K Processors & Media Servers"], image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80" },
+      { id: "03", title: "PROFESSIONAL SOUND", shortDesc: "Concert-grade line array audio systems, digital mixing consoles, and crystal-clear wireless microphone rigs.", features: ["Active Line Array Sound Systems", "32-64 Channel Digital Mixing Consoles", "Shure & Sennheiser Digital Wireless RF Mics"], image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80" },
+      { id: "04", title: "EVENT LIGHTING", shortDesc: "Intelligent moving heads, architectural beam washes, laser effects, and DMX console light show design.", features: ["Intelligent Moving Head Beams & Washes", "Architectural Uplighting & FX Lasers", "GrandMA DMX Control Desks"], image: "https://images.unsplash.com/photo-1508997449629-303059a039c0?auto=format&fit=crop&w=1200&q=80" },
+      { id: "05", title: "STAGE & INFRASTRUCTURE", shortDesc: "Heavy-duty aluminum trussing, modular staging platforms, VIP risers, and crowd safety barriers.", features: ["Modular Staging Decks with Adjustable Heights", "Box Trussing & Ground Support Towers", "Mojo Heavy-duty Barricades"], image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80" },
+      { id: "06", title: "PHOTOGRAPHY", shortDesc: "High-speed event photojournalism, red carpet portraiture, and immediate live press photo delivery.", features: ["Full-Frame Sony Alpha Photo Systems", "Real-time Live Photo Tethering & Cloud Uploads", "Red Carpet Media Wall & VIP Step-and-Repeat"], image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" },
+      { id: "07", title: "VIDEOGRAPHY", shortDesc: "Cinematic 4K event films, high-energy aftermovies, highlight reels, and promo videos.", features: ["4K 10-Bit Cinema Camera Systems", "High-Speed 120fps Slow-Motion Capture", "Full 4K Master Aftermovies"], image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" },
+      { id: "08", title: "DRONE COVERAGE", shortDesc: "CAA Sri Lanka certified aerial drone photography & 4K cinematic video over festivals and venues.", features: ["DJI Mavic 3 Cine & FPV Platforms", "4K 60fps ProRes Footage", "CAASL Safety Compliance"], image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80" },
+      { id: "09", title: "LIVE STREAMING", shortDesc: "Broadcast-grade multicamera live video switching, RTMP streaming, and low-latency digital distribution.", features: ["4 to 8 SDI/HDMI Feeds", "Blackmagic ATEM Switchers", "Redundant Bonded 5G Mobile Internet"], image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" }
+    ];
+
+    const journeySteps = [
+      { step: "01", title: "PLAN", subtitle: "Concept & Blueprinting", desc: "Site surveying, CAD stage design, acoustic calculation, power load balancing, and production schedule drafting.", image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" },
+      { step: "02", title: "BUILD", subtitle: "Infrastructure Deployment", desc: "Truss erection, modular stage decking, LED panel mounting, FOH booth setup, and safety barricading.", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80" },
+      { step: "03", title: "CONNECT", subtitle: "Signal & Power Routing", desc: "Laying 3-phase power distribution, DMX lighting cables, optical fiber SDI video lines, and digital audio snakes.", image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" },
+      { step: "04", title: "TEST", subtitle: "Sound Checks & Light Cues", desc: "Acoustic line tuning, RF frequency scanning, LED visual pixel checks, wireless mic calibration, and full dry run.", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" },
+      { step: "05", title: "GO LIVE", subtitle: "Flawless Execution", desc: "Doors open. Stage direction cues, live multicam switching, light shows synced to music, and real-time audience energy.", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" },
+      { step: "06", title: "CAPTURE", subtitle: "Master Media & Aftermovie", desc: "High-speed photo edits, 4K video reel mastering, full multi-track audio recording turnaround, and archiving.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" }
+    ];
+
+    const featuredProjects = [
+      {
+        id: "pop-culture-2026", title: "POP CULTURE FESTIVAL 2026", category: "Mega Festival", eventType: "Music & Cultural Festival", location: "Port City Arena, Colombo", year: "2026", client: "Showup Entertainment", audience: "12,000+ Festival Goers", coverImage: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Stage Production", "Curved LED Screens", "Concert Sound System", "Intelligent Light Show", "4K Live Multicam Broadcast"],
+        shortDesc: "Sri Lanka's biggest global music experience featuring international headliners, 3D LED visuals, and stadium line arrays.",
+        brief: "Build an ultra-futuristic festival stage with immersive LED screens, heavy bass audio, and laser arrays for 12,000 attendees.",
+        approach: "Deployed ground support box trusses, 60kW line arrays, and synchronized live camera feeds to high-refresh outdoor P3.9 LED walls.",
+        production: "Continuous 48-hour build operations with marine-grade power cabling and strict crowd safety barricading.",
+        result: "Unrivaled festival experience praised by international DJs and thousands of youth attendees.",
+        gallery: ["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80", "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80"]
+      },
+      {
+        id: "apex-musical-fest", title: "Apex Arena Concert", category: "Concerts", eventType: "Mega Musical Festival", location: "Viharamahadevi Amphitheatre, Colombo", year: "2026", client: "Apex Entertainment Group", audience: "8,500+ Attendees", coverImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Complete Event Production", "P3.9 Outdoor Curved LED Screen", "Active Line Array Sound System", "DMX Moving Light Rig"],
+        shortDesc: "Full-scale technical execution and media coverage for Sri Lanka's premier outdoor rock & pop musical spectacle.",
+        brief: "Project crystal-clear sound across an 8,000+ capacity open amphitheatre.",
+        approach: "Heavy-duty 4-pillar roof truss system supporting a 60kW line array and massive central LED wall.",
+        production: "Over 1,200 meters of power and SDI cables routed cleanly behind safety barriers.",
+        result: "Flawless 6-hour live production with zero technical delays.",
+        gallery: ["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80"]
+      },
+      {
+        id: "lanka-tech-summit", title: "Lanka Tech & AI Summit 2026", category: "Conferences", eventType: "International Tech Conference", location: "BMICH Main Conference Hall, Colombo", year: "2026", client: "Ministry of Technology", audience: "2,200 Delegates", coverImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Conference Staging", "P2.5 Ultra-HD Indoor LED Backdrop", "Digital Speech Audio", "Live Hybrid Streaming"],
+        shortDesc: "A high-precision tech conference bringing global keynote speakers and dual presentation screens.",
+        brief: "Transform BMICH hall into a futuristic tech environment.",
+        approach: "Designed an ultra-wide P2.5 LED canvas split into dynamic picture-in-picture zones.",
+        production: "Precision color calibration across all LED surfaces to match broadcast standards.",
+        result: "High acclaim from international keynote speakers.",
+        gallery: ["https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1000&q=80"]
+      }
+    ];
+
+    const portfolioItems = [
+      { id: 1, title: "Pop Culture 2026 Stage Build", category: "PRODUCTION", image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=80", location: "Port City Colombo", type: "image" },
+      { id: 2, title: "Concert Stage LED Rigging", category: "PRODUCTION", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80", location: "Colombo Amphitheatre", type: "image" },
+      { id: 3, title: "Live Multicam Switcher Desk", category: "LIVE", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80", location: "BMICH Colombo", type: "image" },
+      { id: 4, title: "Festival Crowd Reaction", category: "PHOTOGRAPHY", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80", location: "Port City Arena", type: "image" },
+      { id: 5, title: "4K Cinema Camera Rig", category: "VIDEO", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80", location: "Shangri-La Ballroom", type: "video" },
+      { id: 6, title: "Line Array Sound Tuning", category: "BTS", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80", location: "Galle Arena", type: "image" }
+    ];
+
+    // Real Brand SVG Icons Component
+    const SocialIcons = ({ size = "w-5 h-5", className = "" }) => (
+      <div className={`flex items-center gap-3 ${className}`}>
+        {/* Facebook SVG */}
+        <a 
+          href={companyInfo.socials.facebook} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="p-2.5 rounded-full bg-slate-900 border border-slate-800 hover:border-blue-500 text-slate-300 hover:text-blue-500 transition-all hover:scale-110 shadow group"
+          title="Facebook Page"
+        >
+          <svg className={`${size} fill-current`} viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        
+        {/* Instagram SVG */}
+        <a 
+          href={companyInfo.socials.instagram} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="p-2.5 rounded-full bg-slate-900 border border-slate-800 hover:border-pink-500 text-slate-300 hover:text-pink-500 transition-all hover:scale-110 shadow group"
+          title="Instagram Profile"
+        >
+          <svg className={`${size} fill-current`} viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+
+        {/* TikTok SVG */}
+        <a 
+          href={companyInfo.socials.tiktok} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="p-2.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-400 transition-all hover:scale-110 shadow group"
+          title="TikTok Profile"
+        >
+          <svg className={`${size} fill-current`} viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.5-1.32 2.5-.02.94.41 1.87 1.15 2.44.82.63 1.93.81 2.92.51.98-.28 1.8-1.05 2.11-2.01.21-.63.24-1.31.23-1.97.02-5.18.01-10.36.01-15.54z"/></svg>
+        </a>
+
+        {/* YouTube SVG */}
+        <a 
+          href={companyInfo.socials.youtube} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="p-2.5 rounded-full bg-slate-900 border border-slate-800 hover:border-red-600 text-slate-300 hover:text-red-500 transition-all hover:scale-110 shadow group"
+          title="YouTube Channel"
+        >
+          <svg className={`${size} fill-current`} viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    );
+
+    function App() {
+      const [scrolled, setScrolled] = useState(false);
+      const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+      const [activeCaseStudy, setActiveCaseStudy] = useState(null);
+      const [emailMethodModal, setEmailMethodModal] = useState(false);
+      const [copiedNotice, setCopiedNotice] = useState(false);
+
+      const [formData, setFormData] = useState({
+        name: "", company: "", phone: "", email: "", eventType: "Corporate Event",
+        eventDate: "", location: "", audience: "", services: [], message: ""
+      });
+
+      useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 50);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      useEffect(() => {
+        if (window.lucide) window.lucide.createIcons();
+      });
+
+      const handleServiceCheckbox = (serviceTitle) => {
+        setFormData(prev => {
+          const exists = prev.services.includes(serviceTitle);
+          return exists
+            ? { ...prev, services: prev.services.filter(s => s !== serviceTitle) }
+            : { ...prev, services: [...prev.services, serviceTitle] };
+        });
+      };
+
+      // Construct Formatted Quote Text Summary
+      const generateQuoteSummary = () => {
+        const servicesList = formData.services.length > 0 ? formData.services.join(", ") : "General Event Production";
+        return `Hello Event Media Production Team,
+
+I would like to request a quotation for an upcoming event in Sri Lanka.
+
+-- CLIENT DETAILS --
+• Name: ${formData.name || 'Not specified'}
+• Company: ${formData.company || 'N/A'}
+• Phone: ${formData.phone || 'Not specified'}
+• Email: ${formData.email || 'Not specified'}
+
+-- EVENT DETAILS --
+• Event Category: ${formData.eventType}
+• Estimated Date: ${formData.eventDate || 'To be decided'}
+• Venue Location: ${formData.location || 'Colombo / Sri Lanka'}
+• Expected Audience: ${formData.audience || 'N/A'}
+• Services Required: ${servicesList}
+
+-- ADDITIONAL REQUIREMENTS / MESSAGE --
+${formData.message || 'No additional notes provided.'}
+
+Looking forward to your reply.`;
+      };
+
+      const handleFormSubmit = (e) => {
+        e.preventDefault();
+        setEmailMethodModal(true);
+      };
+
+      // Dispatch Methods
+      const dispatchViaGmail = () => {
+        const subject = encodeURIComponent(`Quotation Request: ${formData.eventType} - ${formData.name || 'Client'}`);
+        const body = encodeURIComponent(generateQuoteSummary());
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${companyInfo.quotationEmail}&su=${subject}&body=${body}`;
+        window.open(gmailUrl, '_blank');
+        setEmailMethodModal(false);
+      };
+
+      const dispatchViaMailto = () => {
+        const subject = encodeURIComponent(`Quotation Request: ${formData.eventType} - ${formData.name || 'Client'}`);
+        const body = encodeURIComponent(generateQuoteSummary());
+        const mailtoUrl = `mailto:${companyInfo.quotationEmail}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoUrl;
+        setEmailMethodModal(false);
+      };
+
+      const dispatchViaWhatsApp = () => {
+        const text = encodeURIComponent(generateQuoteSummary());
+        const waUrl = `https://wa.me/${companyInfo.whatsappPhone}?text=${text}`;
+        window.open(waUrl, '_blank');
+        setEmailMethodModal(false);
+      };
+
+      const copyToClipboard = () => {
+        navigator.clipboard.writeText(generateQuoteSummary());
+        setCopiedNotice(true);
+        setTimeout(() => setCopiedNotice(false), 3000);
+      };
+
+      const scrollToSection = (id) => {
+        setMobileMenuOpen(false);
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      return (
+        <div className="min-h-screen bg-brand-black text-slate-100 relative font-sans">
+          
+          {/* NAVIGATION BAR WITH LOGO AND REAL SOCIAL BRAND ICONS */}
+          <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            scrolled ? 'bg-brand-black/95 backdrop-blur-xl border-b border-brand-red/30 py-2.5 shadow-[0_0_30px_rgba(229,9,20,0.3)]' : 'bg-gradient-to-b from-black/90 via-black/40 to-transparent py-4'
+          }`}>
+            <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+              
+              {/* Official Uploaded Logo Image */}
+              <a href="#" className="flex items-center gap-3 group">
+                <img src="./logo.png" alt="Event Media Production Logo" className="h-12 sm:h-14 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(229,9,20,0.6)] group-hover:scale-105 transition-transform" />
+              </a>
+
+              {/* Orbitron Desktop Links */}
+              <div className="hidden lg:flex items-center space-x-6 text-xs font-orbitron font-bold tracking-widest uppercase">
+                <button onClick={() => scrollToSection('home')} className="hover:text-brand-neonRed transition-colors py-1">HOME</button>
+                <button onClick={() => scrollToSection('about')} className="hover:text-brand-neonRed transition-colors py-1">ABOUT</button>
+                <button onClick={() => scrollToSection('services')} className="hover:text-brand-neonRed transition-colors py-1">SERVICES</button>
+                <button onClick={() => scrollToSection('journey')} className="hover:text-brand-neonRed transition-colors py-1">PROCESS</button>
+                <button onClick={() => scrollToSection('productions')} className="hover:text-brand-neonRed transition-colors py-1">PRODUCTIONS</button>
+                <button onClick={() => scrollToSection('live-production')} className="text-brand-red font-bold flex items-center gap-1.5 animate-pulse">
+                  <span className="w-2 h-2 rounded-full bg-brand-red inline-block"></span>LIVE STAGE
+                </button>
+                <button onClick={() => scrollToSection('portfolio')} className="hover:text-brand-neonRed transition-colors py-1">PORTFOLIO</button>
+                <button onClick={() => scrollToSection('contact')} className="hover:text-brand-neonRed transition-colors py-1">CONTACT</button>
+              </div>
+
+              {/* Real Social Brand SVG Icons & CTA */}
+              <div className="hidden lg:flex items-center gap-4">
+                
+                {/* Social Icons Bar */}
+                <SocialIcons size="w-4 h-4" className="border-r border-slate-800 pr-4" />
+
+                {/* Glowing Quote Button */}
+                <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-brand-red via-red-600 to-brand-magenta hover:from-red-600 hover:to-brand-red text-white font-orbitron font-extrabold text-xs tracking-wider uppercase px-5 py-2.5 rounded-sm shadow-[0_0_20px_rgba(229,9,20,0.6)] border border-red-400/50 hover:scale-105 transition-all">
+                  GET A QUOTE
+                </button>
+              </div>
+
+              {/* Mobile Button */}
+              <div className="lg:hidden flex items-center gap-2">
+                <button onClick={() => scrollToSection('contact')} className="bg-brand-red text-white text-[10px] font-orbitron font-bold px-3 py-1.5 rounded-sm">QUOTE</button>
+                <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 text-white"><i data-lucide={mobileMenuOpen ? "x" : "menu"} className="w-7 h-7"></i></button>
+              </div>
+            </div>
+          </nav>
+
+          {/* MOBILE MENU DRAWER WITH SOCIAL ICONS */}
+          {mobileMenuOpen && (
+            <div className="fixed inset-0 z-40 bg-brand-black/95 p-6 pt-24 lg:hidden flex flex-col justify-between border-b border-brand-red/40">
+              <div className="flex flex-col space-y-4 font-orbitron font-bold text-lg uppercase">
+                <button onClick={() => scrollToSection('home')} className="text-left py-2 border-b border-white/10">HOME</button>
+                <button onClick={() => scrollToSection('about')} className="text-left py-2 border-b border-white/10">ABOUT US</button>
+                <button onClick={() => scrollToSection('services')} className="text-left py-2 border-b border-white/10">SERVICES</button>
+                <button onClick={() => scrollToSection('journey')} className="text-left py-2 border-b border-white/10">PROCESS</button>
+                <button onClick={() => scrollToSection('productions')} className="text-left py-2 border-b border-white/10">PRODUCTIONS</button>
+                <button onClick={() => scrollToSection('live-production')} className="text-left text-brand-red py-2 border-b border-white/10">LIVE STAGE</button>
+                <button onClick={() => scrollToSection('portfolio')} className="text-left py-2 border-b border-white/10">PORTFOLIO</button>
+                <button onClick={() => scrollToSection('contact')} className="text-left py-2 border-b border-white/10">CONTACT & QUOTE</button>
+              </div>
+
+              {/* Mobile Social Bar */}
+              <div className="flex justify-center gap-4 py-4 border-t border-slate-800">
+                <SocialIcons size="w-5 h-5" />
+              </div>
+            </div>
+          )}
+
+          {/* HIGH-ENERGY HERO SECTION (NO LOGO IN HERO / NO STATS BOXES IN HERO) */}
+          <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 bg-brand-black overflow-hidden">
+            <div className="absolute inset-0 bg-cover bg-center opacity-40 filter contrast-125" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=2000&q=80')` }}></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-brand-black/90"></div>
+            <div className="absolute inset-0 bg-tech-grid opacity-40"></div>
+
+            {/* Glowing Accent Flares */}
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-red/20 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+            <div className="relative max-w-5xl mx-auto px-4 text-center z-10 space-y-8 my-auto">
+              
+              {/* Festival Badge Tag */}
+              <div className="inline-flex items-center gap-2.5 bg-brand-card/90 border border-brand-red/60 px-5 py-2 rounded-full shadow-[0_0_25px_rgba(229,9,20,0.5)]">
+                <span className="w-2.5 h-2.5 rounded-full bg-brand-neonRed animate-rec"></span>
+                <span className="text-xs font-orbitron font-extrabold tracking-widest text-white uppercase">
+                  {companyInfo.tagline}
+                </span>
+              </div>
+
+              {/* Bold Orbitron Headline */}
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-orbitron font-black text-white tracking-tight uppercase leading-[1.02]">
+                WE DON'T JUST CAPTURE EVENTS. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-brand-neonRed to-brand-magenta text-glow-red">
+                  WE PRODUCE THEM.
+                </span>
+              </h1>
+
+              {/* Supporting Copy */}
+              <p className="max-w-2xl mx-auto text-base sm:text-xl text-slate-300 font-sans leading-relaxed">
+                {companyInfo.subtext}
+              </p>
+
+              {/* High-Octane Action CTAs */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
+                <button 
+                  onClick={() => scrollToSection('productions')}
+                  className="w-full sm:w-auto bg-gradient-to-r from-brand-red via-red-600 to-brand-magenta hover:from-red-600 hover:to-brand-red text-white font-orbitron font-extrabold text-sm tracking-wider uppercase px-9 py-4.5 rounded-sm shadow-[0_0_30px_rgba(229,9,20,0.6)] border border-red-400/50 hover:scale-105 transition-all"
+                >
+                  EXPLORE OUR WORK
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="w-full sm:w-auto bg-brand-card/90 hover:bg-slate-800 text-white font-orbitron font-bold text-sm tracking-wider uppercase px-9 py-4.5 rounded-sm border border-slate-700 hover:border-brand-red shadow-lg transition-all"
+                >
+                  GET A QUOTE
+                </button>
+              </div>
+
+            </div>
+          </section>
+
+          {/* CAPABILITIES TICKER */}
+          <section className="bg-gradient-to-r from-brand-red via-red-700 to-brand-magenta text-white py-4 overflow-hidden border-y border-red-500/50 shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+            <div className="animate-marquee flex items-center whitespace-nowrap font-orbitron text-xs sm:text-sm font-black tracking-widest uppercase">
+              {capabilities.concat(capabilities).map((item, idx) => (
+                <div key={idx} className="flex items-center gap-6 mx-4">
+                  <span>{item}</span>
+                  <span className="w-2 h-2 rounded-full bg-white/70"></span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ABOUT SECTION */}
+          <section id="about" className="py-24 bg-brand-black border-b border-slate-800/60">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="lg:col-span-6 relative">
+                  <div className="relative rounded overflow-hidden border border-brand-red/40 shadow-[0_0_30px_rgba(229,9,20,0.25)]">
+                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80" alt="About Event Media Production" className="w-full h-[460px] object-cover" />
+                  </div>
+                </div>
+                <div className="lg:col-span-6 space-y-6">
+                  <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">ABOUT EVENT MEDIA PRODUCTION</div>
+                  <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase leading-tight">
+                    BEHIND EVERY GREAT EVENT IS <span className="text-brand-neonRed text-glow-red">GREAT PRODUCTION.</span>
+                  </h2>
+                  <p className="text-slate-300 font-sans text-base leading-relaxed">{companyInfo.mainObjective}</p>
+                  <p className="text-slate-400 font-sans text-sm leading-relaxed">{companyInfo.subtext}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SERVICES SECTION */}
+          <section id="services" className="py-24 bg-brand-dark border-b border-slate-800/60">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">TECHNICAL INFRASTRUCTURE</div>
+                <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase">EVERYTHING YOUR EVENT NEEDS.</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services.map((srv) => (
+                  <div key={srv.id} className="bg-brand-card border border-slate-800 rounded-sm overflow-hidden hover:border-brand-red/60 transition-all p-6 space-y-4 hover:shadow-[0_0_25px_rgba(229,9,20,0.2)]">
+                    <img src={srv.image} alt={srv.title} className="w-full h-48 object-cover rounded-sm" />
+                    <h3 className="text-xl font-orbitron font-extrabold text-white">{srv.title}</h3>
+                    <p className="text-slate-300 text-xs font-sans">{srv.shortDesc}</p>
+                    <button onClick={() => scrollToSection('contact')} className="w-full bg-slate-900 hover:bg-brand-red text-slate-300 hover:text-white font-orbitron text-xs font-bold uppercase py-3 rounded-sm border border-slate-700 transition-colors">
+                      REQUEST QUOTE
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* PROCESS JOURNEY */}
+          <section id="journey" className="py-24 bg-brand-black border-b border-slate-800/60">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">PRODUCTION TIMELINE</div>
+                <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase">FROM EMPTY VENUE TO LIVE EXPERIENCE</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-orbitron">
+                {journeySteps.map((step) => (
+                  <div key={step.step} className="bg-brand-card p-6 rounded-sm border border-slate-800 space-y-3 hover:border-brand-red/50 transition-colors">
+                    <span className="text-brand-neonRed font-black text-xs">STAGE {step.step}</span>
+                    <h3 className="text-xl font-extrabold text-white">{step.title}</h3>
+                    <p className="text-slate-300 text-xs font-sans">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FEATURED PRODUCTIONS */}
+          <section id="productions" className="py-24 bg-brand-dark border-b border-slate-800/60">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="mb-16 space-y-3">
+                <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">MAJOR CASE STUDIES</div>
+                <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase">SELECTED PRODUCTIONS</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-orbitron">
+                {featuredProjects.map((proj) => (
+                  <div key={proj.id} onClick={() => setActiveCaseStudy(proj)} className="bg-brand-card border border-slate-800 rounded-sm overflow-hidden cursor-pointer hover:border-brand-red/60 transition-all hover:shadow-[0_0_30px_rgba(229,9,20,0.3)]">
+                    <img src={proj.coverImage} alt={proj.title} className="w-full h-64 object-cover" />
+                    <div className="p-6 space-y-2">
+                      <span className="text-brand-neonRed text-xs font-black">{proj.category}</span>
+                      <h3 className="text-xl font-extrabold text-white">{proj.title}</h3>
+                      <p className="text-slate-300 text-xs font-sans">{proj.shortDesc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CASE STUDY MODAL */}
+          {activeCaseStudy && (
+            <div className="fixed inset-0 z-50 bg-black/95 p-6 overflow-y-auto flex justify-center items-center font-orbitron">
+              <div className="max-w-4xl w-full bg-brand-card border border-brand-red rounded-sm p-8 relative space-y-6 shadow-[0_0_50px_rgba(229,9,20,0.4)]">
+                <button onClick={() => setActiveCaseStudy(null)} className="absolute top-4 right-4 text-white text-xl">✕</button>
+                <img src={activeCaseStudy.coverImage} alt={activeCaseStudy.title} className="w-full h-80 object-cover rounded-sm" />
+                <h2 className="text-3xl font-black text-white">{activeCaseStudy.title}</h2>
+                <div className="grid grid-cols-2 gap-4 text-xs font-tech text-slate-300">
+                  <div>CLIENT: <span className="text-white font-bold">{activeCaseStudy.client}</span></div>
+                  <div>LOCATION: <span className="text-white font-bold">{activeCaseStudy.location}</span></div>
+                </div>
+                <p className="text-slate-300 text-sm font-sans">{activeCaseStudy.brief}</p>
+                <button onClick={() => { setActiveCaseStudy(null); scrollToSection('contact'); }} className="bg-brand-red text-white font-extrabold text-xs uppercase px-7 py-3.5 rounded-sm">
+                  GET A QUOTE FOR YOUR EVENT
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* LIVE STAGE BROADCAST */}
+          <section id="live-production" className="py-24 bg-brand-black border-b border-slate-800/60">
+            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-5 space-y-6">
+                <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">REAL-TIME BROADCAST</div>
+                <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase">LIVE. MULTI-CAMERA. <span className="text-brand-neonRed text-glow-red">REAL TIME.</span></h2>
+                <p className="text-slate-300 font-sans text-base">From camera to screen — live. Broadcast-grade Blackmagic ATEM switchers and SDI camera networks.</p>
+                <button onClick={() => scrollToSection('contact')} className="bg-brand-red text-white font-orbitron font-bold text-xs uppercase px-7 py-3.5 rounded-sm shadow-lg">
+                  DISCUSS YOUR LIVE PRODUCTION
+                </button>
+              </div>
+              <div className="lg:col-span-7 bg-brand-card border border-brand-red/40 p-6 rounded-sm">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="relative h-44 rounded-sm border border-brand-red overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" className="w-full h-full object-cover" />
+                    <span className="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-orbitron font-bold px-2 py-0.5">CAM 1 [PGM]</span>
+                  </div>
+                  <div className="relative h-44 rounded-sm border border-slate-800 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" className="w-full h-full object-cover" />
+                    <span className="absolute top-2 left-2 bg-black/80 text-slate-300 text-[10px] font-orbitron px-2 py-0.5">CAM 2 [PVW]</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* PORTFOLIO */}
+          <section id="portfolio" className="py-24 bg-brand-dark border-b border-slate-800/60">
+            <div className="max-w-7xl mx-auto px-4 text-center">
+              <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase mb-12">PRODUCTION PORTFOLIO</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {portfolioItems.map((item) => (
+                  <div key={item.id} className="relative h-72 rounded-sm overflow-hidden bg-brand-card border border-slate-800 hover:border-brand-red/60 transition-all">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    <div className="absolute bottom-3 left-3 right-3 p-3 bg-brand-card/95 rounded-sm border border-white/10 text-left">
+                      <h4 className="text-sm font-orbitron font-bold text-white">{item.title}</h4>
+                      <p className="text-[11px] font-tech text-brand-grey">{item.location}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CONTACT & QUOTE FORM WITH TEXTAREA & METHOD CHOICE MODAL */}
+          <section id="contact" className="py-24 bg-brand-black">
+            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12">
+              <div className="lg:col-span-5 space-y-6">
+                <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">START YOUR PRODUCTION</div>
+                <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase">LET'S BUILD YOUR EVENT.</h2>
+                <p className="text-slate-300 font-sans text-sm">{companyInfo.subtext}</p>
+                
+                {/* Social Connect Icons Card */}
+                <div className="p-5 bg-brand-card border border-slate-800 rounded-sm space-y-4">
+                  <h4 className="text-xs font-orbitron font-bold text-white uppercase tracking-wider">CONNECT ON SOCIAL MEDIA</h4>
+                  <SocialIcons size="w-5 h-5" />
+                </div>
+              </div>
+
+              {/* Quote Request Form */}
+              <div className="lg:col-span-7 bg-brand-card border border-slate-800 rounded-sm p-8 shadow-2xl">
+                <form onSubmit={handleFormSubmit} className="space-y-4 font-tech text-xs">
+                  <h3 className="text-lg font-orbitron font-black text-white uppercase tracking-wide border-b border-slate-800 pb-3">
+                    REQUEST A CUSTOM QUOTATION
+                  </h3>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-brand-grey mb-1">YOUR FULL NAME *</label>
+                      <input type="text" required placeholder="John Perera" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-brand-black border border-slate-800 p-3 rounded text-white focus:outline-none focus:border-brand-red" />
+                    </div>
+                    <div>
+                      <label className="block text-brand-grey mb-1">COMPANY / ORGANIZATION</label>
+                      <input type="text" placeholder="Apex Holdings" value={formData.company} onChange={e => setFormData({...formData, company: e.target.value})} className="w-full bg-brand-black border border-slate-800 p-3 rounded text-white focus:outline-none focus:border-brand-red" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-brand-grey mb-1">PHONE NUMBER *</label>
+                      <input type="tel" required placeholder="+94 77 123 4567" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-brand-black border border-slate-800 p-3 rounded text-white focus:outline-none focus:border-brand-red" />
+                    </div>
+                    <div>
+                      <label className="block text-brand-grey mb-1">EMAIL ADDRESS *</label>
+                      <input type="email" required placeholder="john@example.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-brand-black border border-slate-800 p-3 rounded text-white focus:outline-none focus:border-brand-red" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-brand-grey mb-1">EVENT CATEGORY</label>
+                      <select value={formData.eventType} onChange={e => setFormData({...formData, eventType: e.target.value})} className="w-full bg-brand-black border border-slate-800 p-3 rounded text-white focus:outline-none focus:border-brand-red">
+                        <option value="Concert & Musical Festival">Concert & Musical Festival</option>
+                        <option value="Corporate Event & Conference">Corporate Event & Conference</option>
+                        <option value="Gala & Award Ceremony">Gala & Award Ceremony</option>
+                        <option value="Product Launch & Activation">Product Launch & Activation</option>
+                        <option value="Outdoor Event">Outdoor Event</option>
+                        <option value="Live Multicam Broadcast">Live Multicam Broadcast</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-brand-grey mb-1">ESTIMATED EVENT DATE</label>
+                      <input type="date" value={formData.eventDate} onChange={e => setFormData({...formData, eventDate: e.target.value})} className="w-full bg-brand-black border border-slate-800 p-3 rounded text-white focus:outline-none focus:border-brand-red" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-brand-grey mb-1">SERVICES REQUIRED (SELECT ALL THAT APPLY)</label>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {["Event Production", "LED Wall", "Sound System", "Lighting", "Stage & Trussing", "Photography", "Videography", "Live Streaming"].map(s => (
+                        <div key={s} onClick={() => handleServiceCheckbox(s)} className={`p-2.5 rounded border cursor-pointer select-none text-center ${formData.services.includes(s) ? 'bg-brand-red/30 border-brand-red text-white font-bold' : 'bg-brand-black border-slate-800 text-slate-400'}`}>
+                          {s}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Textarea for User Message / Event Requirements */}
+                  <div>
+                    <label className="block text-brand-grey mb-1">EVENT REQUIREMENTS & DETAILS *</label>
+                    <textarea 
+                      rows="4" 
+                      required 
+                      placeholder="Write your event requirements here (e.g. venue location, stage size, audience capacity, specific audio-visual setup needed)..."
+                      value={formData.message}
+                      onChange={e => setFormData({...formData, message: e.target.value})}
+                      className="w-full bg-brand-black border border-slate-800 p-3.5 rounded text-white focus:outline-none focus:border-brand-red text-sm"
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" className="w-full bg-gradient-to-r from-brand-red via-red-600 to-brand-magenta text-white font-orbitron font-extrabold py-4 rounded-sm text-xs uppercase tracking-widest shadow-[0_0_25px_rgba(229,9,20,0.6)] hover:scale-[1.01] transition-all">
+                    REQUEST A QUOTATION
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          {/* EMAIL DISPATCH METHOD SELECTION MODAL */}
+          {emailMethodModal && (
+            <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md p-4 flex items-center justify-center font-orbitron animate-fadeIn">
+              <div className="max-w-md w-full bg-brand-card border border-brand-red/60 rounded-sm p-6 sm:p-8 space-y-6 relative shadow-[0_0_50px_rgba(229,9,20,0.5)]">
+                
+                <button onClick={() => setEmailMethodModal(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
+
+                <div className="text-center space-y-2">
+                  <div className="w-12 h-12 bg-brand-red/20 border border-brand-red text-brand-neonRed rounded-full flex items-center justify-center mx-auto text-xl font-black">
+                    ✉
+                  </div>
+                  <h3 className="text-xl font-black text-white uppercase tracking-wide">HOW WOULD YOU LIKE TO SEND YOUR QUOTE?</h3>
+                  <p className="text-xs font-sans text-slate-300">Choose your preferred email client or messaging method to dispatch your quote details directly to our Sri Lanka production desk:</p>
+                </div>
+
+                {/* Dispatch Options */}
+                <div className="space-y-3 font-tech text-xs">
+                  
+                  {/* Option 1: Gmail */}
+                  <button 
+                    onClick={dispatchViaGmail}
+                    className="w-full p-4 rounded bg-slate-900 border border-slate-800 hover:border-red-500 hover:bg-slate-800 text-left flex items-center justify-between group transition-all"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-8 rounded bg-red-600/20 text-red-500 font-bold flex items-center justify-center">M</span>
+                      <div>
+                        <span className="font-bold text-white block">Gmail Web Mail</span>
+                        <span className="text-[11px] text-slate-400">Opens Gmail tab pre-filled with recipient & text</span>
+                      </div>
+                    </div>
+                    <span className="text-brand-red font-bold group-hover:translate-x-1 transition-transform">➔</span>
+                  </button>
+
+                  {/* Option 2: Default Mail App / Outlook */}
+                  <button 
+                    onClick={dispatchViaMailto}
+                    className="w-full p-4 rounded bg-slate-900 border border-slate-800 hover:border-blue-500 hover:bg-slate-800 text-left flex items-center justify-between group transition-all"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-8 rounded bg-blue-600/20 text-blue-400 font-bold flex items-center justify-center">📧</span>
+                      <div>
+                        <span className="font-bold text-white block">Default Mail App / Outlook</span>
+                        <span className="text-[11px] text-slate-400">Launches Outlook / Apple Mail / Mail Client</span>
+                      </div>
+                    </div>
+                    <span className="text-blue-400 font-bold group-hover:translate-x-1 transition-transform">➔</span>
+                  </button>
+
+                  {/* Option 3: WhatsApp Inquiry */}
+                  <button 
+                    onClick={dispatchViaWhatsApp}
+                    className="w-full p-4 rounded bg-slate-900 border border-slate-800 hover:border-emerald-500 hover:bg-slate-800 text-left flex items-center justify-between group transition-all"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-8 rounded bg-emerald-600/20 text-emerald-400 font-bold flex items-center justify-center">💬</span>
+                      <div>
+                        <span className="font-bold text-white block">WhatsApp Instant Message</span>
+                        <span className="text-[11px] text-slate-400">Sends formatted quote summary to WhatsApp</span>
+                      </div>
+                    </div>
+                    <span className="text-emerald-400 font-bold group-hover:translate-x-1 transition-transform">➔</span>
+                  </button>
+
+                  {/* Option 4: Copy Text */}
+                  <button 
+                    onClick={copyToClipboard}
+                    className="w-full p-3 rounded bg-brand-black border border-slate-800 hover:border-slate-600 text-slate-300 text-center font-bold"
+                  >
+                    {copiedNotice ? "✓ QUOTE SUMMARY COPIED TO CLIPBOARD!" : "📋 Copy Quote Summary Text"}
+                  </button>
+
+                </div>
+
+              </div>
+            </div>
+          )}
+
+          {/* FLOATING WHATSAPP BUTTON */}
+          <a href={`https://wa.me/${companyInfo.whatsappPhone}?text=${encodeURIComponent("Hi Event Media Production, I'm interested in getting a quotation for an upcoming event.")}`} target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-40 bg-emerald-600 text-white p-3.5 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] flex items-center gap-2">
+            <i data-lucide="message-square" className="w-6 h-6"></i>
+          </a>
+
+          {/* FOOTER WITH SOCIAL ICONS */}
+          <footer className="bg-brand-black border-t border-slate-800 py-12 text-center text-xs font-orbitron text-slate-500">
+            
+            {/* Footer Logo */}
+            <div className="flex justify-center mb-4">
+              <img src="./logo.png" alt="Event Media Production" className="h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(229,9,20,0.5)]" />
+            </div>
+
+            <p className="mb-4 text-white font-black text-sm">EVENT MEDIA PRODUCTION (PVT) LTD</p>
+            
+            {/* Social Icons Bar */}
+            <div className="flex justify-center items-center gap-4 mb-6">
+              <SocialIcons size="w-5 h-5" />
+            </div>
+
+            <p className="font-tech text-slate-500">© {new Date().getFullYear()} Event Media Production (Pvt) Ltd. All Rights Reserved. Sri Lanka.</p>
+          </footer>
+
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
