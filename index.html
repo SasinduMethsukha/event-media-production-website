@@ -192,15 +192,10 @@
     ];
 
     const services = [
-      { id: "01", title: "EVENT PRODUCTION", shortDesc: "End-to-end event planning, technical coordination, stage architecture, and complete live execution.", features: ["Technical Site Inspections & Spatial Planning", "Show Direction & Event Timeline Coordination", "Power Distribution & Backup Generator Management"], image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" },
-      { id: "02", title: "LED WALLS & VISUALS", shortDesc: "High-refresh P2.5 & P3.9 indoor/outdoor LED display systems, mapping, and media playback control.", features: ["Ultra-fine P2.5 Indoor & P3.9 Outdoor LED Panels", "Curved, Hanging & Ground-supported LED Structures", "Novastar 4K Processors & Media Servers"], image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80" },
-      { id: "03", title: "PROFESSIONAL SOUND", shortDesc: "Concert-grade line array audio systems, digital mixing consoles, and crystal-clear wireless microphone rigs.", features: ["Active Line Array Sound Systems", "32-64 Channel Digital Mixing Consoles", "Shure & Sennheiser Digital Wireless RF Mics"], image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80" },
-      { id: "04", title: "EVENT LIGHTING", shortDesc: "Intelligent moving heads, architectural beam washes, laser effects, and DMX console light show design.", features: ["Intelligent Moving Head Beams & Washes", "Architectural Uplighting & FX Lasers", "GrandMA DMX Control Desks"], image: "https://images.unsplash.com/photo-1508997449629-303059a039c0?auto=format&fit=crop&w=1200&q=80" },
-      { id: "05", title: "STAGE & INFRASTRUCTURE", shortDesc: "Heavy-duty aluminum trussing, modular staging platforms, VIP risers, and crowd safety barriers.", features: ["Modular Staging Decks with Adjustable Heights", "Box Trussing & Ground Support Towers", "Mojo Heavy-duty Barricades"], image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80" },
-      { id: "06", title: "PHOTOGRAPHY", shortDesc: "High-speed event photojournalism, red carpet portraiture, and immediate live press photo delivery.", features: ["Full-Frame Sony Alpha Photo Systems", "Real-time Live Photo Tethering & Cloud Uploads", "Red Carpet Media Wall & VIP Step-and-Repeat"], image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" },
-      { id: "07", title: "VIDEOGRAPHY", shortDesc: "Cinematic 4K event films, high-energy aftermovies, highlight reels, and promo videos.", features: ["4K 10-Bit Cinema Camera Systems", "High-Speed 120fps Slow-Motion Capture", "Full 4K Master Aftermovies"], image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" },
-      { id: "08", title: "DRONE COVERAGE", shortDesc: "CAA Sri Lanka certified aerial drone photography & 4K cinematic video over festivals and venues.", features: ["DJI Mavic 3 Cine & FPV Platforms", "4K 60fps ProRes Footage", "CAASL Safety Compliance"], image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80" },
-      { id: "09", title: "LIVE STREAMING", shortDesc: "Broadcast-grade multicamera live video switching, RTMP streaming, and low-latency digital distribution.", features: ["4 to 8 SDI/HDMI Feeds", "Blackmagic ATEM Switchers", "Redundant Bonded 5G Mobile Internet"], image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" }
+      { id: "01", title: "VIDEO PRODUCTION", shortDesc: "Cinematic 4K event films, high-energy aftermovies, highlight reels, and post-production editing.", features: ["4K 10-Bit Cinema Camera Rigs", "High-Speed 120fps Slow-Motion Capture", "Full 4K Master Aftermovies & Color Grading"], image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" },
+      { id: "02", title: "LIVE STREAMING", shortDesc: "Broadcast-grade multi-platform live streaming (YouTube, FB, Web), low-latency RTMP transmission, and bonded 5G cellular connectivity.", features: ["Bonded 5G Mobile Internet Systems", "Real-time Lower-Third Graphics & Scoreboards", "Multi-Platform Simulcast Distribution"], image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" },
+      { id: "03", title: "MULTI-CAMERA PRODUCTION", shortDesc: "4 to 8 SDI feed multi-cam setups, Blackmagic ATEM live vision mixing, and instant multi-angle recording.", features: ["4 to 8 SDI/HDMI Cinema Feeds", "Blackmagic ATEM Production Switchers", "Live Vision Mixing & Instant Playback"], image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" },
+      { id: "04", title: "EVENT COVERAGE", shortDesc: "Comprehensive event coverage combining high-res photojournalism, live press tethering, highlight clips, and master digital archiving.", features: ["Full-Frame Cinema & Photo Rigs", "Real-time Live Photo Tethering & Cloud Uploads", "Complete Media Archiving & Social Reels"], image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" }
     ];
 
     const journeySteps = [
@@ -214,44 +209,83 @@
 
     const featuredProjects = [
       {
-        id: "pop-culture-2026", title: "POP CULTURE FESTIVAL 2026", category: "Mega Festival", eventType: "Music & Cultural Festival", location: "Port City Arena, Colombo", year: "2026", client: "Showup Entertainment", audience: "12,000+ Festival Goers", coverImage: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
-        servicesProvided: ["Stage Production", "Curved LED Screens", "Concert Sound System", "Intelligent Light Show", "4K Live Multicam Broadcast"],
-        shortDesc: "Sri Lanka's biggest global music experience featuring international headliners, 3D LED visuals, and stadium line arrays.",
-        brief: "Build an ultra-futuristic festival stage with immersive LED screens, heavy bass audio, and laser arrays for 12,000 attendees.",
-        approach: "Deployed ground support box trusses, 60kW line arrays, and synchronized live camera feeds to high-refresh outdoor P3.9 LED walls.",
-        production: "Continuous 48-hour build operations with marine-grade power cabling and strict crowd safety barricading.",
-        result: "Unrivaled festival experience praised by international DJs and thousands of youth attendees.",
-        gallery: ["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80", "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80"]
+        id: "cyber-security-conf-2026",
+        title: "Cyber Security Conference 2026",
+        category: "Conference",
+        role: "Complete Event Production",
+        location: "Colombo, Sri Lanka",
+        year: "2026",
+        client: "Cyber Security Council",
+        coverImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Complete Event Production", "P2.5 LED Wall Backdrop", "Speech Audio Systems", "Multicam Live Stream"],
+        shortDesc: "Complete event production, staging, and technical media deployment for national cyber security summit.",
+        brief: "Deliver end-to-end technical production, stage management, and live stream broadcast for security leaders.",
+        approach: "Deployed HD P2.5 indoor LED backdrop, digital speech audio system, and seamless multicam stream.",
+        production: "Flawless technical execution across keynotes and interactive panel discussions.",
+        result: "Highly praised by international keynote speakers and delegates."
       },
       {
-        id: "apex-musical-fest", title: "Apex Arena Concert", category: "Concerts", eventType: "Mega Musical Festival", location: "Viharamahadevi Amphitheatre, Colombo", year: "2026", client: "Apex Entertainment Group", audience: "8,500+ Attendees", coverImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80",
-        servicesProvided: ["Complete Event Production", "P3.9 Outdoor Curved LED Screen", "Active Line Array Sound System", "DMX Moving Light Rig"],
-        shortDesc: "Full-scale technical execution and media coverage for Sri Lanka's premier outdoor rock & pop musical spectacle.",
-        brief: "Project crystal-clear sound across an 8,000+ capacity open amphitheatre.",
-        approach: "Heavy-duty 4-pillar roof truss system supporting a 60kW line array and massive central LED wall.",
-        production: "Over 1,200 meters of power and SDI cables routed cleanly behind safety barriers.",
-        result: "Flawless 6-hour live production with zero technical delays.",
-        gallery: ["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80"]
+        id: "icc-t20-fan-parks-2026",
+        title: "ICC T20 World Cup Fan Parks 2026",
+        category: "Sports / Large Scale",
+        role: "Complete Event Production",
+        location: "Colombo Fan Arenas",
+        year: "2026",
+        client: "Sports Authority",
+        coverImage: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Complete Event Production", "Outdoor P3.9 LED Display", "Stadium Line Array Audio", "Security Barricades"],
+        shortDesc: "Large-scale event production bringing high-definition match screenings to thousands of cricket fans.",
+        brief: "Construct massive outdoor fan parks with daylight-visible LED screens and concert audio.",
+        approach: "Erected ground support box truss structures with 5500-nit outdoor LED panels and 60kW audio.",
+        production: "Continuous multi-day live operation managing crowd flow and uninterrupted broadcast feeds.",
+        result: "Electrifying stadium atmosphere for thousands of cricket fans."
       },
       {
-        id: "lanka-tech-summit", title: "Lanka Tech & AI Summit 2026", category: "Conferences", eventType: "International Tech Conference", location: "BMICH Main Conference Hall, Colombo", year: "2026", client: "Ministry of Technology", audience: "2,200 Delegates", coverImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=80",
-        servicesProvided: ["Conference Staging", "P2.5 Ultra-HD Indoor LED Backdrop", "Digital Speech Audio", "Live Hybrid Streaming"],
-        shortDesc: "A high-precision tech conference bringing global keynote speakers and dual presentation screens.",
-        brief: "Transform BMICH hall into a futuristic tech environment.",
-        approach: "Designed an ultra-wide P2.5 LED canvas split into dynamic picture-in-picture zones.",
-        production: "Precision color calibration across all LED surfaces to match broadcast standards.",
-        result: "High acclaim from international keynote speakers.",
-        gallery: ["https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1000&q=80"]
+        id: "gbo-bash-2026",
+        title: "GBO Bash 2026",
+        category: "Entertainment",
+        role: "Complete Event Production",
+        location: "Colombo, Sri Lanka",
+        year: "2026",
+        client: "GBO Entertainment",
+        coverImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Complete Event Production", "Moving Head Beams & Lasers", "Line Array Audio Rigs", "4K Video Switching"],
+        shortDesc: "Full-scale mega entertainment production featuring dynamic laser shows and live concert audio.",
+        brief: "Provide complete technical production and stage management for high-energy musical bash.",
+        approach: "Custom DMX light show, line array sound, and high-contrast stage screens.",
+        production: "6-hour non-stop live performance coordination.",
+        result: "Packed venue with spectacular audio-visual immersion."
+      },
+      {
+        id: "world-powerlifting-2025",
+        title: "World Powerlifting Championship 2025",
+        category: "International Sports",
+        role: "Video Production / Event Coverage",
+        location: "Sri Lanka",
+        year: "2025",
+        client: "Powerlifting Federation",
+        coverImage: "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=1600&q=80",
+        servicesProvided: ["Video Production", "Event Coverage", "Slow-Motion Replay Systems", "Live Score Graphics"],
+        shortDesc: "High-speed multicam video production and comprehensive coverage for international powerlifting championship.",
+        brief: "Capture high-stakes lifting attempts with precision slow-motion and real-time score overlays.",
+        approach: "Deployed 4K 120fps camera rigs and live graphics switchers.",
+        production: "Multi-day coverage across all weight classes and podium ceremonies.",
+        result: "Broadcast-quality sports coverage delivered internationally."
       }
     ];
 
     const portfolioItems = [
-      { id: 1, title: "Pop Culture 2026 Stage Build", category: "PRODUCTION", image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=80", location: "Port City Colombo", type: "image" },
-      { id: 2, title: "Concert Stage LED Rigging", category: "PRODUCTION", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80", location: "Colombo Amphitheatre", type: "image" },
-      { id: 3, title: "Live Multicam Switcher Desk", category: "LIVE", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80", location: "BMICH Colombo", type: "image" },
-      { id: 4, title: "Festival Crowd Reaction", category: "PHOTOGRAPHY", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80", location: "Port City Arena", type: "image" },
-      { id: 5, title: "4K Cinema Camera Rig", category: "VIDEO", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80", location: "Shangri-La Ballroom", type: "video" },
-      { id: 6, title: "Line Array Sound Tuning", category: "BTS", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80", location: "Galle Arena", type: "image" }
+      { id: 1, title: "Cyber Security Conference 2026", category: "Conference", role: "Complete Event Production", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "COMPLETE PRODUCTION", filterKey: "COMPLETE PRODUCTION" },
+      { id: 2, title: "ICC T20 World Cup Fan Parks 2026", category: "Sports / Large Scale", role: "Complete Event Production", image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "COMPLETE PRODUCTION", filterKey: "COMPLETE PRODUCTION" },
+      { id: 3, title: "GBO Bash 2026", category: "Entertainment", role: "Complete Event Production", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "COMPLETE PRODUCTION", filterKey: "COMPLETE PRODUCTION" },
+      { id: 4, title: "Lions Events", category: "Corporate / Social", role: "Complete Event Production", image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80", location: "Sri Lanka", badge: "COMPLETE PRODUCTION", filterKey: "COMPLETE PRODUCTION" },
+      { id: 5, title: "Hello Valentine’s 2026", category: "Entertainment", role: "Complete Event Production", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "COMPLETE PRODUCTION", filterKey: "COMPLETE PRODUCTION" },
+      { id: 6, title: "World Powerlifting Championship 2025", category: "International Sports", role: "Video Production / Event Coverage", image: "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=1000&q=80", location: "Sri Lanka", badge: "VIDEO & COVERAGE", filterKey: "VIDEO PRODUCTION / COVERAGE" },
+      { id: 7, title: "Resonance ’25 – Visakha Vidyalaya", category: "Entertainment", role: "Video Production", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "VIDEO PRODUCTION", filterKey: "VIDEO PRODUCTION" },
+      { id: 8, title: "I Was There – Book Launch", category: "Corporate / Launch", role: "Video Production / Event Coverage", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "VIDEO & COVERAGE", filterKey: "VIDEO PRODUCTION / COVERAGE" },
+      { id: 9, title: "Susara Gee Rawee", category: "Musical", role: "Video Production / Event Coverage", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80", location: "Sri Lanka", badge: "VIDEO & COVERAGE", filterKey: "VIDEO PRODUCTION / COVERAGE" },
+      { id: 10, title: "Office Opening Ceremony", category: "Corporate", role: "Video Production / Event Coverage", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80", location: "Colombo", badge: "VIDEO & COVERAGE", filterKey: "VIDEO PRODUCTION / COVERAGE" },
+      { id: 11, title: "CJA Cricket Tournament", category: "Sports", role: "Video Production / Event Coverage", image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1000&q=80", location: "Sri Lanka", badge: "VIDEO & COVERAGE", filterKey: "VIDEO PRODUCTION / COVERAGE" }
     ];
 
     // Real Brand SVG Icons Component
@@ -665,14 +699,22 @@ Looking forward to your reply.`;
           {/* PORTFOLIO */}
           <section id="portfolio" className="py-24 bg-brand-dark border-b border-slate-800/60">
             <div className="max-w-7xl mx-auto px-4 text-center">
+              <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase mb-2">OUR RECENT WORK & EVENT COVERAGE</div>
               <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase mb-12">PRODUCTION PORTFOLIO</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {portfolioItems.map((item) => (
-                  <div key={item.id} className="relative h-72 rounded-sm overflow-hidden bg-brand-card border border-slate-800 hover:border-brand-red/60 transition-all">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                    <div className="absolute bottom-3 left-3 right-3 p-3 bg-brand-card/95 rounded-sm border border-white/10 text-left">
-                      <h4 className="text-sm font-orbitron font-bold text-white">{item.title}</h4>
-                      <p className="text-[11px] font-tech text-brand-grey">{item.location}</p>
+                  <div key={item.id} className="relative h-80 rounded-sm overflow-hidden bg-brand-card border border-slate-800 hover:border-brand-red/60 transition-all group shadow-lg">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-brand-red text-white text-[10px] font-orbitron font-bold px-2.5 py-1 rounded-sm shadow">
+                        {item.badge}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4 text-left space-y-1">
+                      <span className="text-brand-neonRed text-[11px] font-tech uppercase tracking-wider block">{item.category}</span>
+                      <h4 className="text-base font-orbitron font-bold text-white leading-tight">{item.title}</h4>
+                      <p className="text-xs font-sans text-slate-300 font-medium">Role: {item.role}</p>
                     </div>
                   </div>
                 ))}
