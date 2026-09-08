@@ -302,10 +302,10 @@ export const portfolioItems = [
   { id: 3, title: "GBO Bash 2026", category: "Entertainment", role: "Complete Event Production", image: "./assets/4.jpg", location: "Colombo", badge: "COMPLETE PRODUCTION" },
   { id: 4, title: "Lions Events", category: "Corporate / Social", role: "Complete Event Production", image: "./assets/9.jpeg", location: "Sri Lanka", badge: "COMPLETE PRODUCTION" },
   { id: 5, title: "Official Launch of SLS-Certified Water Bottle by Atlas Axillia", category: "Corporate / Launch", role: "Complete Event Production", image: "./assets/5.jpg", location: "Colombo", badge: "COMPLETE PRODUCTION" },
-  { id: 6, title: "World Powerlifting Championship 2025", category: "International Sports", role: "Video Production / Event Coverage", image: "./assets/10.jpg", location: "Sri Lanka", badge: "VIDEO & COVERAGE" },
-  { id: 7, title: "Susara Gee Rawee", category: "Musical", role: "Video Production / Event Coverage", image: "./assets/7.jpeg", location: "Sri Lanka", badge: "VIDEO & COVERAGE" },
-  { id: 8, title: "Office Opening Ceremony", category: "Corporate", role: "Video Production / Event Coverage", image: "./assets/8.jpeg", location: "Colombo", badge: "VIDEO & COVERAGE" },
-  { id: 9, title: "CJA Cricket Tournament", category: "Sports", role: "Video Production / Event Coverage", image: "./assets/3.jpg", location: "Sri Lanka", badge: "VIDEO & COVERAGE" }
+  { id: 6, title: "World Powerlifting Championship 2025", category: "International Sports", role: "Video Production / Live Streaming", image: "./assets/10.jpg", location: "Sri Lanka", badge: "VIDEO & LIVE STREAMING" },
+  { id: 7, title: "Susara Gee Rawee", category: "Musical", role: "Video Production / Live Streaming", image: "./assets/7.jpeg", location: "Sri Lanka", badge: "VIDEO & LIVE STREAMING" },
+  { id: 8, title: "Office Opening Ceremony", category: "Corporate", role: "Video Production / Live Streaming", image: "./assets/8.jpeg", location: "Colombo", badge: "VIDEO & LIVE STREAMING" },
+  { id: 9, title: "CJA Cricket Tournament", category: "Sports", role: "Video Production / Live Streaming", image: "./assets/3.jpg", location: "Sri Lanka", badge: "VIDEO & LIVE STREAMING" }
 ];
 
 export const portfolioGallery = [
