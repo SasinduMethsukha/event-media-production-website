@@ -12,9 +12,8 @@ export const companyInfo = {
   quotationEmail: "eventmediap@gmail.com",
   socials: {
     facebook: "https://www.facebook.com/share/1ETkvgru4q/?mibextid=wwXIfr",
-    instagram: "https://instagram.com/eventmediaproduction.lk",
-    youtube: "https://youtube.com/@eventmediaproduction",
-    tiktok: "https://tiktok.com/@eventmediaproduction.lk"
+    instagram: "https://www.instagram.com/event.media.production?stkn=MTZldzdnZTFtbDE2cQ%3D%3D&utm_source=qr",
+    tiktok: "https://www.tiktok.com/@event.media.production?_r=1&_t=ZS-99ZES2HokCq"
   },
   stats: [
     { label: "EVENTS PRODUCED", value: 250, prefix: "", suffix: "+" },
