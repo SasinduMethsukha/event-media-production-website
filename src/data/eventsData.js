@@ -238,7 +238,7 @@ export const featuredProjects = [
     location: "Colombo, Sri Lanka",
     year: "2026",
     client: "Cyber Security Council",
-    coverImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=80",
+    coverImage: "./assets/2.jpg",
     servicesProvided: ["Complete Event Production", "P2.5 LED Wall Backdrop", "Speech Audio Systems", "Multicam Live Stream"],
     shortDesc: "Complete event production, staging, and technical media deployment for national cyber security summit.",
     brief: "Deliver end-to-end technical production, stage management, and live stream broadcast for security leaders.",
@@ -254,7 +254,7 @@ export const featuredProjects = [
     location: "Colombo Fan Arenas",
     year: "2026",
     client: "Sports Authority",
-    coverImage: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
+    coverImage: "./assets/1.jpg",
     servicesProvided: ["Complete Event Production", "Outdoor P3.9 LED Display", "Stadium Line Array Audio", "Security Barricades"],
     shortDesc: "Large-scale event production bringing high-definition match screenings to thousands of cricket fans.",
     brief: "Construct massive outdoor fan parks with daylight-visible LED screens and concert audio.",
@@ -270,7 +270,7 @@ export const featuredProjects = [
     location: "Colombo, Sri Lanka",
     year: "2026",
     client: "GBO Entertainment",
-    coverImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80",
+    coverImage: "./assets/4.jpg",
     servicesProvided: ["Complete Event Production", "Moving Head Beams & Lasers", "Line Array Audio Rigs", "4K Video Switching"],
     shortDesc: "Full-scale mega entertainment production featuring dynamic laser shows and live concert audio.",
     brief: "Provide complete technical production and stage management for high-energy musical bash.",
@@ -286,7 +286,7 @@ export const featuredProjects = [
     location: "Sri Lanka",
     year: "2025",
     client: "Powerlifting Federation",
-    coverImage: "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=1600&q=80",
+    coverImage: "./assets/6.jpg",
     servicesProvided: ["Video Production", "Event Coverage", "Slow-Motion Replay Systems", "Live Score Graphics"],
     shortDesc: "High-speed multicam video production and comprehensive coverage for international powerlifting championship.",
     brief: "Capture high-stakes lifting attempts with precision slow-motion and real-time score overlays.",
@@ -297,37 +297,61 @@ export const featuredProjects = [
 ];
 
 export const portfolioItems = [
-    id: 2,
-    title: "Live Multicam Switcher Desk",
-    category: "LIVE",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80",
+  { id: 1, title: "Cyber Security Conference 2026", category: "Conference", role: "Complete Event Production", image: "./assets/2.jpg", location: "Colombo", badge: "COMPLETE PRODUCTION" },
+  { id: 2, title: "ICC T20 World Cup Fan Parks 2026", category: "Sports / Large Scale", role: "Complete Event Production", image: "./assets/1.jpg", location: "Colombo", badge: "COMPLETE PRODUCTION" },
+  { id: 3, title: "GBO Bash 2026", category: "Entertainment", role: "Complete Event Production", image: "./assets/4.jpg", location: "Colombo", badge: "COMPLETE PRODUCTION" },
+  { id: 4, title: "Lions Events", category: "Corporate / Social", role: "Complete Event Production", image: "./assets/3.jpg", location: "Sri Lanka", badge: "COMPLETE PRODUCTION" },
+  { id: 5, title: "Hello Valentine’s 2026", category: "Entertainment", role: "Complete Event Production", image: "./assets/5.jpg", location: "Colombo", badge: "COMPLETE PRODUCTION" },
+  { id: 6, title: "World Powerlifting Championship 2025", category: "International Sports", role: "Video Production / Event Coverage", image: "./assets/6.jpg", location: "Sri Lanka", badge: "VIDEO & COVERAGE" },
+  { id: 7, title: "Resonance ’25 – Visakha Vidyalaya", category: "Entertainment", role: "Video Production", image: "./assets/stream_2.jpg", location: "Colombo", badge: "VIDEO PRODUCTION" },
+  { id: 8, title: "I Was There – Book Launch", category: "Corporate / Launch", role: "Video Production / Event Coverage", image: "./assets/stream_4.jpg", location: "Colombo", badge: "VIDEO & COVERAGE" },
+  { id: 9, title: "Susara Gee Rawee", category: "Musical", role: "Video Production / Event Coverage", image: "./assets/4.jpg", location: "Sri Lanka", badge: "VIDEO & COVERAGE" },
+  { id: 10, title: "Office Opening Ceremony", category: "Corporate", role: "Video Production / Event Coverage", image: "./assets/2.jpg", location: "Colombo", badge: "VIDEO & COVERAGE" },
+  { id: 11, title: "CJA Cricket Tournament", category: "Sports", role: "Video Production / Event Coverage", image: "./assets/1.jpg", location: "Sri Lanka", badge: "VIDEO & COVERAGE" }
+];
+
+export const portfolioGallery = [
+  {
+    id: 1,
+    title: "Main Stage Light Show",
+    category: "PRODUCTION",
+    image: "https://images.unsplash.com/photo-1514525253161-7a46d1958163?auto=format&fit=crop&w=1000&q=80",
     aspect: "landscape",
-    location: "BMICH Colombo",
+    location: "Colombo Arena",
+    type: "image"
+  },
+  {
+    id: 2,
+    title: "Outdoor Festival Crowd",
+    category: "EVENTS",
+    image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1000&q=80",
+    aspect: "portrait",
+    location: "Galle Face Green",
     type: "image"
   },
   {
     id: 3,
-    title: "High-Energy Crowd Shot",
-    category: "PHOTOGRAPHY",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80",
-    aspect: "portrait",
-    location: "Bentota Music Fest",
+    title: "Live Multicam Broadcast",
+    category: "VIDEO",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80",
+    aspect: "landscape",
+    location: "Control Room",
     type: "image"
   },
   {
     id: 4,
-    title: "4K Cinema Camera Rig",
-    category: "VIDEO",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80",
-    aspect: "landscape",
-    location: "Shangri-La Ballroom",
-    type: "video"
+    title: "High-End Corporate Audio",
+    category: "PRODUCTION",
+    image: "https://images.unsplash.com/photo-1520523839897-fd0b522bf42c?auto=format&fit=crop&w=1000&q=80",
+    aspect: "portrait",
+    location: "Shangri-La Colombo",
+    type: "image"
   },
   {
     id: 5,
-    title: "Line Array Sound Calibration",
-    category: "BTS",
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80",
+    title: "Cricket Fan Park Setup",
+    category: "EVENTS",
+    image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=1000&q=80",
     aspect: "landscape",
     location: "Galle International Arena",
     type: "image"
