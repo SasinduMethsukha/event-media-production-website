@@ -348,6 +348,400 @@
       </div>
     );
 
+    // Secondary Card ForwardRef Helper Component
+    const SecondaryCard = React.forwardRef(({ srv, hoveredNode, setHoveredNode, scrollToSection, inView, delay }, ref) => {
+      const isHovered = hoveredNode === srv.id;
+      const isDimmed = hoveredNode && hoveredNode !== 'center' && hoveredNode !== srv.id;
+      const isCenterHovered = hoveredNode === 'center';
+
+      return (
+        <div
+          ref={ref}
+          onMouseEnter={() => setHoveredNode(srv.id)}
+          onMouseLeave={() => setHoveredNode(null)}
+          className={`w-[310px] sm:w-[320px] bg-brand-card border transition-all duration-300 rounded-sm p-5 space-y-3 cursor-pointer shadow-lg ${
+            isHovered
+              ? 'border-brand-red shadow-[0_0_25px_rgba(229,9,20,0.4)] -translate-y-1.5 z-20'
+              : isCenterHovered
+              ? 'border-brand-red/70 shadow-[0_0_20px_rgba(229,9,20,0.3)] z-10'
+              : 'border-slate-800 hover:border-brand-red/50 z-10'
+          } ${isDimmed ? 'opacity-40 scale-95' : 'opacity-100'} ${
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          } ${delay}`}
+        >
+          <div className="flex items-center justify-between">
+            <span className="font-orbitron font-black text-xs text-slate-600 tracking-wider">#{srv.id}</span>
+            <div className={`w-10 h-10 rounded-full bg-slate-900 border transition-all flex items-center justify-center ${
+              isHovered || isCenterHovered ? 'border-brand-red text-brand-neonRed scale-110 shadow-[0_0_12px_rgba(229,9,20,0.5)]' : 'border-slate-800 text-slate-300'
+            }`}>
+              <i data-lucide={srv.icon} className="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <h4 className={`text-base font-orbitron font-extrabold transition-colors ${
+            isHovered || isCenterHovered ? 'text-brand-neonRed' : 'text-white'
+          }`}>
+            {srv.title}
+          </h4>
+
+          <p className="text-slate-300 text-xs font-sans leading-relaxed">
+            {srv.shortDesc}
+          </p>
+
+          <div className="text-[10px] font-mono text-brand-red border-t border-slate-800/80 pt-2 tracking-tight">
+            {srv.tags}
+          </div>
+        </div>
+      );
+    });
+
+    // Connected Services Ecosystem Hub-and-Spoke Component
+    const ServicesNetwork = ({ scrollToSection }) => {
+      const containerRef = useRef(null);
+      const centerRef = useRef(null);
+      const spokeRefs = useRef({});
+      const [lines, setLines] = useState([]);
+      const [hoveredNode, setHoveredNode] = useState(null);
+      const [inView, setInView] = useState(false);
+
+      const networkServices = [
+        { id: "01", icon: "layers", title: "EVENT PRODUCTION", shortDesc: "End-to-end event planning, technical coordination and execution.", tags: "Planning • Coordination • Production" },
+        { id: "02", icon: "tv", title: "LED WALLS & VISUALS", shortDesc: "High-refresh P2.5 & P3.9 indoor/outdoor LED display systems.", tags: "P2.5 & P3.9 • 4K Servers • Visuals" },
+        { id: "03", icon: "volume-2", title: "PROFESSIONAL SOUND", shortDesc: "Concert-grade line array audio systems & digital mixing consoles.", tags: "Line Array • Digital Consoles • Wireless RF" },
+        { id: "04", icon: "zap", title: "EVENT LIGHTING", shortDesc: "Intelligent moving heads, beam washes & DMX light show design.", tags: "Moving Heads • Lasers • GrandMA DMX" },
+        { id: "05", icon: "box", title: "STAGE & INFRASTRUCTURE", shortDesc: "Heavy-duty aluminum trussing, modular staging & safety barriers.", tags: "Trussing • Staging • Barriers" },
+        { id: "06", icon: "camera", title: "PHOTOGRAPHY", shortDesc: "High-speed event photojournalism & live press photo delivery.", tags: "Sony Alpha • Tethering • Live Delivery" }
+      ];
+
+      const calculateLines = () => {
+        if (!containerRef.current || !centerRef.current) return;
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const centerRect = centerRef.current.getBoundingClientRect();
+
+        const cx = centerRect.left + centerRect.width / 2 - containerRect.left;
+        const cy = centerRect.top + centerRect.height / 2 - containerRect.top;
+
+        const calculated = networkServices.map((srv) => {
+          const el = spokeRefs.current[srv.id];
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          const sx = r.left + r.width / 2 - containerRect.left;
+          const sy = r.top + r.height / 2 - containerRect.top;
+
+          return {
+            id: srv.id,
+            x1: cx,
+            y1: cy,
+            x2: sx,
+            y2: sy
+          };
+        }).filter(Boolean);
+
+        setLines(calculated);
+      };
+
+      useEffect(() => {
+        calculateLines();
+        window.addEventListener('resize', calculateLines);
+        return () => window.removeEventListener('resize', calculateLines);
+      }, []);
+
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setInView(true);
+              setTimeout(calculateLines, 100);
+              setTimeout(calculateLines, 400);
+            }
+          },
+          { threshold: 0.15 }
+        );
+        if (containerRef.current) {
+          observer.observe(containerRef.current);
+        }
+        return () => observer.disconnect();
+      }, []);
+
+      useEffect(() => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }, [inView, lines]);
+
+      return (
+        <section id="services" className="py-24 bg-brand-dark border-b border-slate-800/60 overflow-hidden relative">
+          {/* Subtle Technical Grid Background */}
+          <div className="absolute inset-0 bg-tech-grid opacity-20 pointer-events-none"></div>
+
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
+            {/* SECTION HEADING */}
+            <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+              <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase flex items-center justify-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+                <span>// PRODUCTION CAPABILITIES</span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase tracking-tight">
+                EVERYTHING CONNECTED. <span className="text-brand-neonRed text-glow-red">ONE PRODUCTION.</span>
+              </h2>
+              <p className="text-slate-300 font-sans text-sm max-w-xl mx-auto leading-relaxed">
+                From camera to screen, every part of the production works together.
+              </p>
+            </div>
+
+            {/* DESKTOP CONNECTED HUB-AND-SPOKE NETWORK (>= 1024px) */}
+            <div 
+              ref={containerRef} 
+              className="hidden lg:block relative min-h-[880px] w-full max-w-6xl mx-auto pt-6 pb-12"
+            >
+              {/* Dynamic SVG Connection Lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
+                <defs>
+                  <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                {lines.map((line) => {
+                  const isActive = hoveredNode === 'center' || hoveredNode === line.id;
+                  const pathD = `M ${line.x1} ${line.y1} L ${line.x2} ${line.y2}`;
+                  return (
+                    <g key={line.id}>
+                      {/* Connection Line */}
+                      <line
+                        x1={line.x1}
+                        y1={line.y1}
+                        x2={line.x2}
+                        y2={line.y2}
+                        className={`transition-all duration-300 ${
+                          isActive
+                            ? 'stroke-brand-red stroke-[3px] opacity-100'
+                            : 'stroke-slate-800 stroke-[1.5px] opacity-60'
+                        }`}
+                        style={{ filter: isActive ? 'url(#glow-red)' : 'none' }}
+                      />
+                      {/* Signal Pulse Dot */}
+                      <circle 
+                        r={isActive ? "4.5" : "3"} 
+                        fill={isActive ? "#E50914" : "#94A3B8"}
+                        className="transition-all"
+                      >
+                        <animateMotion
+                          path={pathD}
+                          dur={isActive ? "1.8s" : "4.5s"}
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                    </g>
+                  );
+                })}
+              </svg>
+
+              {/* 3x3 Radial Layout Grid */}
+              <div className="grid grid-cols-3 gap-y-16 gap-x-12 items-center relative z-10">
+                {/* ROW 1: TOP CENTER (#01 EVENT PRODUCTION) */}
+                <div className="col-start-2 flex justify-center">
+                  <SecondaryCard
+                    srv={networkServices[0]}
+                    ref={(el) => (spokeRefs.current[networkServices[0].id] = el)}
+                    hoveredNode={hoveredNode}
+                    setHoveredNode={setHoveredNode}
+                    scrollToSection={scrollToSection}
+                    inView={inView}
+                    delay="delay-100"
+                  />
+                </div>
+
+                {/* ROW 2: LEFT (#06 PHOTOGRAPHY) | CENTER HUB | RIGHT (#02 LED WALLS) */}
+                <div className="col-start-1 flex justify-center">
+                  <SecondaryCard
+                    srv={networkServices[5]}
+                    ref={(el) => (spokeRefs.current[networkServices[5].id] = el)}
+                    hoveredNode={hoveredNode}
+                    setHoveredNode={setHoveredNode}
+                    scrollToSection={scrollToSection}
+                    inView={inView}
+                    delay="delay-500"
+                  />
+                </div>
+
+                {/* CENTER PRIMARY NODE (1.6x Larger) */}
+                <div className="col-start-2 flex justify-center">
+                  <div
+                    ref={centerRef}
+                    onMouseEnter={() => setHoveredNode('center')}
+                    onMouseLeave={() => setHoveredNode(null)}
+                    className={`w-[440px] bg-brand-black/95 border-2 transition-all duration-500 rounded-sm p-8 space-y-6 relative overflow-hidden group cursor-pointer ${
+                      hoveredNode === 'center'
+                        ? 'border-brand-red shadow-[0_0_50px_rgba(229,9,20,0.5)] scale-105'
+                        : 'border-brand-red/70 shadow-[0_0_35px_rgba(229,9,20,0.3)] hover:scale-102'
+                    } ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+                  >
+                    {/* Subtle Red Radial Background Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-red/10 via-transparent to-transparent pointer-events-none"></div>
+                    
+                    {/* Top Row Indicators */}
+                    <div className="flex items-center justify-between font-orbitron text-[10px] font-bold text-slate-400 border-b border-slate-800 pb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-brand-red font-mono">CAM 01</span>
+                        <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono">CAM 02</span>
+                        <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-cyan-400 font-mono">PROGRAM</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="px-1.5 py-0.5 bg-red-950/80 text-red-400 border border-red-800/60 rounded font-mono text-[9px]">REC ●</span>
+                        <span className="px-2 py-0.5 bg-brand-red text-white font-black rounded flex items-center gap-1 shadow-[0_0_10px_rgba(229,9,20,0.8)]">
+                          LIVE <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Central Broadcast Camera Icon */}
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-full bg-brand-red/15 border-2 border-brand-red flex items-center justify-center text-brand-neonRed shadow-[0_0_20px_rgba(229,9,20,0.4)] group-hover:scale-110 transition-transform">
+                        <i data-lucide="video" className="w-9 h-9"></i>
+                      </div>
+                      <div>
+                        <div className="text-brand-red font-orbitron font-extrabold text-xs tracking-widest uppercase">PRIMARY BROADCAST HUB</div>
+                        <h3 className="text-xl sm:text-2xl font-orbitron font-black text-white leading-tight">
+                          VIDEO PRODUCTION <br />
+                          <span className="text-brand-neonRed text-glow-red">& LIVE STREAMING</span>
+                        </h3>
+                      </div>
+                    </div>
+
+                    <p className="text-slate-300 font-sans text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+                      Multi-camera video production, live direction, recording and professional streaming for events of every scale.
+                    </p>
+
+                    <div className="pt-2 flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-[10px] font-orbitron font-bold text-slate-400">
+                        <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+                        <span>CORE ENGINE</span>
+                      </div>
+                      <button 
+                        onClick={() => scrollToSection('contact')}
+                        className="bg-brand-red hover:bg-red-700 text-white font-orbitron text-xs font-bold uppercase px-5 py-2.5 rounded-sm transition-all shadow-[0_0_15px_rgba(229,9,20,0.4)] hover:shadow-[0_0_25px_rgba(229,9,20,0.7)]"
+                      >
+                        BOOK CORE HUB
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-start-3 flex justify-center">
+                  <SecondaryCard
+                    srv={networkServices[1]}
+                    ref={(el) => (spokeRefs.current[networkServices[1].id] = el)}
+                    hoveredNode={hoveredNode}
+                    setHoveredNode={setHoveredNode}
+                    scrollToSection={scrollToSection}
+                    inView={inView}
+                    delay="delay-200"
+                  />
+                </div>
+
+                {/* ROW 3: LEFT (#05 STAGE) | CENTER (#04 LIGHTING) | RIGHT (#03 SOUND) */}
+                <div className="col-start-1 flex justify-center">
+                  <SecondaryCard
+                    srv={networkServices[4]}
+                    ref={(el) => (spokeRefs.current[networkServices[4].id] = el)}
+                    hoveredNode={hoveredNode}
+                    setHoveredNode={setHoveredNode}
+                    scrollToSection={scrollToSection}
+                    inView={inView}
+                    delay="delay-400"
+                  />
+                </div>
+
+                <div className="col-start-2 flex justify-center">
+                  <SecondaryCard
+                    srv={networkServices[3]}
+                    ref={(el) => (spokeRefs.current[networkServices[3].id] = el)}
+                    hoveredNode={hoveredNode}
+                    setHoveredNode={setHoveredNode}
+                    scrollToSection={scrollToSection}
+                    inView={inView}
+                    delay="delay-300"
+                  />
+                </div>
+
+                <div className="col-start-3 flex justify-center">
+                  <SecondaryCard
+                    srv={networkServices[2]}
+                    ref={(el) => (spokeRefs.current[networkServices[2].id] = el)}
+                    hoveredNode={hoveredNode}
+                    setHoveredNode={setHoveredNode}
+                    scrollToSection={scrollToSection}
+                    inView={inView}
+                    delay="delay-300"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* MOBILE & TABLET CONNECTED VERTICAL PRODUCTION FLOW (< 1024px) */}
+            <div className="block lg:hidden max-w-lg mx-auto relative pt-4 pb-8 space-y-8">
+              {/* Central Vertical Connector Line */}
+              <div className="absolute left-1/2 top-28 bottom-12 -translate-x-1/2 w-0.5 bg-gradient-to-b from-brand-red via-brand-red/60 to-slate-800 pointer-events-none z-0"></div>
+
+              {/* PRIMARY CENTRAL NODE (TOP ON MOBILE) */}
+              <div className="relative z-10 bg-brand-black border-2 border-brand-red rounded-sm p-6 space-y-4 shadow-[0_0_30px_rgba(229,9,20,0.35)]">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3 font-orbitron text-[10px]">
+                  <span className="text-brand-red font-bold font-mono">CAM 01 | 02 | PGM</span>
+                  <span className="bg-brand-red text-white px-2 py-0.5 font-bold rounded flex items-center gap-1 shadow">
+                    LIVE <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-brand-red/20 border border-brand-red flex items-center justify-center text-brand-neonRed shrink-0">
+                    <i data-lucide="video" className="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div className="text-brand-red font-orbitron text-[10px] font-bold tracking-widest uppercase">CORE HUB</div>
+                    <h3 className="text-lg font-orbitron font-black text-white leading-tight">
+                      VIDEO PRODUCTION & LIVE STREAMING
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-xs font-sans leading-relaxed">
+                  Multi-camera video production, live direction, recording and professional streaming for events of every scale.
+                </p>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="w-full bg-brand-red hover:bg-red-700 text-white font-orbitron text-xs font-bold py-2.5 rounded-sm uppercase tracking-wider transition-colors shadow"
+                >
+                  REQUEST QUOTE
+                </button>
+              </div>
+
+              {/* SECONDARY NODES CONNECTED VERTICALLY */}
+              {networkServices.map((srv) => (
+                <div key={srv.id} className="relative z-10 pt-4">
+                  {/* Vertical Node Connection Dot */}
+                  <div className="w-4 h-4 rounded-full bg-brand-red border-2 border-brand-black shadow-[0_0_12px_#E50914] mx-auto -mb-2 relative z-20 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                  </div>
+                  <div className="bg-brand-card border border-slate-800 hover:border-brand-red/60 rounded-sm p-5 space-y-3 shadow-md transition-all">
+                    <div className="flex items-center justify-between">
+                      <span className="font-orbitron font-black text-xs text-slate-600">#{srv.id}</span>
+                      <div className="w-10 h-10 rounded-full bg-slate-900 border border-brand-red/50 flex items-center justify-center text-brand-neonRed">
+                        <i data-lucide={srv.icon} className="w-5 h-5"></i>
+                      </div>
+                    </div>
+                    <h4 className="text-base font-orbitron font-bold text-white">{srv.title}</h4>
+                    <p className="text-slate-300 text-xs font-sans leading-relaxed">{srv.shortDesc}</p>
+                    <div className="text-[10px] font-mono text-brand-red pt-1 border-t border-slate-800/80">
+                      {srv.tags}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
     function App() {
       const [scrolled, setScrolled] = useState(false);
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -600,60 +994,8 @@ Looking forward to your reply.`;
             </div>
           </section>
 
-          {/* SERVICES SECTION */}
-          <section id="services" className="py-24 bg-brand-dark border-b border-slate-800/60">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <div className="text-brand-red text-xs font-orbitron font-extrabold tracking-widest uppercase">TECHNICAL INFRASTRUCTURE</div>
-                <h2 className="text-3xl sm:text-5xl font-orbitron font-black text-white uppercase">EVERYTHING YOUR EVENT NEEDS.</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map((srv) => (
-                  <div key={srv.id} className="group bg-brand-card border border-slate-800 rounded-sm overflow-hidden hover:border-brand-red/60 transition-all p-6 space-y-5 hover:shadow-[0_0_25px_rgba(229,9,20,0.2)] flex flex-col justify-between">
-                    <div className="space-y-4">
-                      {/* High-Tech Cyberpunk Graphic Header Box */}
-                      <div className="h-44 bg-brand-black/90 border border-slate-800 rounded-sm relative flex flex-col items-center justify-center overflow-hidden bg-tech-grid group-hover:border-brand-red/40 transition-colors">
-                        {/* Watermark Service ID */}
-                        <span className="absolute top-2.5 left-3.5 font-orbitron font-black text-xs text-slate-700 tracking-widest">#{srv.id}</span>
-                        
-                        {/* Glowing Circular Icon Badge */}
-                        <div className="w-16 h-16 rounded-full bg-slate-900/90 border border-brand-red/60 flex items-center justify-center text-brand-neonRed shadow-[0_0_15px_rgba(229,9,20,0.4)] group-hover:scale-110 transition-transform">
-                          <i data-lucide={srv.icon} className="w-8 h-8"></i>
-                        </div>
-                        
-                        {/* Animated Soundwave Equalizer Graphic Visualizer Bar */}
-                        <div className="absolute bottom-3 flex items-end gap-1.5 h-3.5">
-                          <span className="w-1 bg-brand-red/80 rounded-t h-2 animate-eq-bar1"></span>
-                          <span className="w-1 bg-brand-red/80 rounded-t h-3.5 animate-eq-bar2"></span>
-                          <span className="w-1 bg-brand-red/80 rounded-t h-1.5 animate-eq-bar3"></span>
-                          <span className="w-1 bg-brand-red/80 rounded-t h-3 animate-eq-bar4"></span>
-                          <span className="w-1 bg-brand-red/80 rounded-t h-2 animate-eq-bar5"></span>
-                        </div>
-                      </div>
-
-                      <h3 className="text-xl font-orbitron font-extrabold text-white group-hover:text-brand-neonRed transition-colors">{srv.title}</h3>
-                      <p className="text-slate-300 text-xs font-sans leading-relaxed">{srv.shortDesc}</p>
-
-                      {srv.features && (
-                        <ul className="space-y-2 text-xs text-slate-400 font-sans border-t border-slate-800/80 pt-4">
-                          {srv.features.map((feat, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-brand-red mt-1 shrink-0"></span>
-                              <span className="text-slate-300">{feat}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-
-                    <button onClick={() => scrollToSection('contact')} className="w-full bg-slate-900 hover:bg-brand-red text-slate-300 hover:text-white font-orbitron text-xs font-bold uppercase py-3 rounded-sm border border-slate-700 transition-colors tracking-wider mt-4">
-                      REQUEST QUOTE
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* CONNECTED SERVICES NETWORK ECOSYSTEM */}
+          <ServicesNetwork scrollToSection={scrollToSection} />
 
           {/* PROCESS JOURNEY */}
           <section id="journey" className="py-24 bg-brand-black border-b border-slate-800/60">
